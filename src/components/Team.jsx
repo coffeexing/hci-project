@@ -23,7 +23,7 @@ const Team = () => {
       image: lai,
     },
     {
-      name: 'Xing Zhong Yang',
+      name: 'Xing Zhongyang',
       methodology: 'User 3 Testing',
       image: xing,
     },
