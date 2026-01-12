@@ -173,74 +173,79 @@ const ResearchPage = () => {
               <AnimatePresence>
                 {isGuideOpen && (
                     <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
+                        initial={{height: 0, opacity: 0}}
+                        animate={{height: 'auto', opacity: 1}}
+                        exit={{height: 0, opacity: 0}}
+                        transition={{duration: 0.3}}
                         className="overflow-hidden"
                     >
                       <div className="bg-black/40 p-10 rounded-xl border border-white/5 mt-6"
-                           style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.4)' }}
+                           style={{boxShadow: '0 8px 32px rgba(0,0,0,0.4)'}}
                       >
                         {/* Welcome Section */}
-                        <div className="mb-10">
-                          <h3 className="text-3xl font-display font-bold text-white mb-8 tracking-tight">
-                            SEADS Driving Monitoring System Test
-                          </h3>
-                          <div className="space-y-6">
-                            <div className="bg-gradient-to-br from-cyan-400/5 to-purple-500/5 border border-white/10 rounded-xl p-6">
-                              <h4 className="text-lg font-bold text-cyan-400 mb-3 tracking-wide flex items-center gap-2">
-                                <span className="material-symbols-outlined">waving_hand</span>
-                                Welcome
-                              </h4>
-                              <p className="text-base leading-relaxed text-slate-300 font-light">
-                                Hello! Welcome to SEADS (driving monitoring system) user test. This is a simulated driving scenario test. Please don't be nervous - there are no right or wrong answers. We simply want to understand your genuine user experience.
-                              </p>
-                            </div>
-                          </div>
+                        <div
+                            className="mb-10 bg-gradient-to-br from-cyan-400/5 to-purple-500/5 border border-white/10 rounded-xl p-6">
+                          <h4 className="text-lg font-bold text-cyan-400 mb-3 tracking-wide flex items-center gap-2">
+                            <span className="material-symbols-outlined">waving_hand</span>
+                            Welcome
+                          </h4>
+                          <p className="text-base leading-relaxed text-slate-300 font-light">
+                            Hello! Welcome to our driving monitoring system user test. This is a simulated driving
+                            scenario test. Please don't be nervous - there are no right or wrong answers. We simply want
+                            to understand your genuine user experience.
+                          </p>
                         </div>
 
                         {/* Test Procedure */}
-                        <div className="bg-black/30 p-8 rounded-xl border border-white/5 mb-8">
+                        <div
+                            className="mb-10 bg-gradient-to-br from-cyan-400/5 to-purple-500/5 border border-white/10 rounded-xl p-8">
                           <h3 className="text-xl font-bold text-cyan-400 mb-6 tracking-wider uppercase flex items-center gap-3">
                             <span className="material-symbols-outlined">schedule</span>
-                            Test Procedure
+                            Test Procedure (Approximately 5 minutes)
                           </h3>
                           <div className="space-y-6">
                             <div className="flex gap-4">
-                              <div className="flex-shrink-0 w-12 h-12 bg-cyan-400/10 border border-cyan-400/30 rounded-lg flex items-center justify-center">
+                              <div
+                                  className="flex-shrink-0 w-12 h-12 bg-cyan-400/10 border border-cyan-400/30 rounded-lg flex items-center justify-center">
                                 <span className="text-cyan-400 font-bold text-lg">1</span>
                               </div>
                               <div>
                                 <h4 className="font-bold text-white mb-2">Start the Driving Monitoring System</h4>
-                                <p className="text-slate-400">Please start the driving monitoring system and view the driving information displayed on the dashboard.</p>
+                                <p className="text-slate-400">Please start the driving monitoring system and view the
+                                  driving information displayed on the dashboard.</p>
                               </div>
                             </div>
 
                             <div className="flex gap-4">
-                              <div className="flex-shrink-0 w-12 h-12 bg-purple-400/10 border border-purple-400/30 rounded-lg flex items-center justify-center">
+                              <div
+                                  className="flex-shrink-0 w-12 h-12 bg-purple-400/10 border border-purple-400/30 rounded-lg flex items-center justify-center">
                                 <span className="text-purple-400 font-bold text-lg">2</span>
                               </div>
                               <div>
                                 <h4 className="font-bold text-white mb-2">Respond to the Fatigue Alert</h4>
-                                <p className="text-slate-400">When the system detects that you are in a fatigued state and an AI recommendation pops up, please read the recommendation content and respond as you see fit.</p>
+                                <p className="text-slate-400">When the system detects that you are in a fatigued state
+                                  and an AI recommendation pops up, please read the recommendation content and respond
+                                  as you see fit.</p>
                               </div>
                             </div>
 
                             <div className="flex gap-4">
-                              <div className="flex-shrink-0 w-12 h-12 bg-green-400/10 border border-green-400/30 rounded-lg flex items-center justify-center">
+                              <div
+                                  className="flex-shrink-0 w-12 h-12 bg-green-400/10 border border-green-400/30 rounded-lg flex items-center justify-center">
                                 <span className="text-green-400 font-bold text-lg">3</span>
                               </div>
                               <div>
                                 <h4 className="font-bold text-white mb-2">End the Drive and Review the Trip Report</h4>
-                                <p className="text-slate-400">Please end the current driving session and review the trip summary report generated by the system.</p>
+                                <p className="text-slate-400">Please end the current driving session and review the trip
+                                  summary report generated by the system.</p>
                               </div>
                             </div>
                           </div>
                         </div>
 
                         {/* Core Questions */}
-                        <div className="bg-gradient-to-br from-cyan-400/5 to-purple-500/5 border border-white/10 rounded-xl p-8 mb-6">
+                        <div
+                            className="mb-6 bg-gradient-to-br from-cyan-400/5 to-purple-500/5 border border-white/10 rounded-xl p-8">
                           <h3 className="text-xl font-bold text-cyan-400 mb-6 flex items-center gap-3">
                             <span className="material-symbols-outlined">help</span>
                             Core Questions
@@ -262,9 +267,11 @@ const ResearchPage = () => {
                         </div>
 
                         {/* Closing */}
-                        <div className="bg-black/30 border border-white/10 rounded-xl p-6 mb-6">
-                          <p className="text-slate-400 italic text-lg">
-                            Thank you very much for your valuable feedback! Your input will help us improve the system design.
+                        <div
+                            className="mb-6 bg-gradient-to-br from-cyan-400/5 to-purple-500/5 border border-white/10 rounded-xl p-6">
+                          <p className="text-slate-300 text-base leading-relaxed">
+                            Thank you very much for your valuable feedback! Your input will help us improve the system
+                            design.
                           </p>
                         </div>
 
@@ -322,17 +329,17 @@ const ResearchPage = () => {
                 {filteredVideos.map((video, index) => (
                     <motion.div
                         key={video.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
+                        initial={{opacity: 0, y: 20}}
+                        animate={{opacity: 1, y: 0}}
+                        exit={{opacity: 0, y: -20}}
                         transition={{
                           duration: 0.4,
                           delay: index * 0.1,
                           ease: "easeInOut"
                         }}
-                        whileHover={{ scale: 1.02 }}
+                        whileHover={{scale: 1.02}}
                         className="bg-black/40 border border-white/10 backdrop-blur-md rounded-lg overflow-hidden transition-all duration-300 hover:border-cyan-400/30 group"
-                        style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.05)' }}
+                        style={{boxShadow: '0 4px 20px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.05)'}}
                     >
                       <div className="aspect-video bg-[#050505] relative overflow-hidden">
                         <iframe
@@ -359,12 +366,13 @@ const ResearchPage = () => {
 
           {/* Observations Section */}
           <section className="mb-32">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 border-b border-white/10 pb-12">
+            <div
+                className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 border-b border-white/10 pb-12">
               <div className="flex items-start gap-6">
                 <div className="h-20 w-1.5 bg-green-500 rounded-full shadow-[0_0_20px_rgba(0,255,148,0.6)] mt-4"></div>
                 <div>
                   <motion.h2
-                      initial={{ opacity: 0, x: -30 }}
+                      initial={{opacity: 0, x: -30}}
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 0.8 }}
                       className="text-5xl md:text-7xl font-display font-bold text-white tracking-tight"
