@@ -6,6 +6,7 @@ const ResearchPage = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
   const [selectedTask, setSelectedTask] = useState(1); // Track which task is selected (1, 2, or 3)
+  const [isGuideOpen, setIsGuideOpen] = useState(false);
 
   // Video data array - Google Drive video links
   const videoData = [
@@ -139,6 +140,138 @@ const ResearchPage = () => {
                 </div>
               </div>
             </div>
+
+            {/* Task Guide - Collapsible Section */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8 }}
+                className="mb-12"
+            >
+              <button
+                  onClick={() => setIsGuideOpen(!isGuideOpen)}
+                  className="w-full flex items-center justify-between p-6 bg-black/40 hover:bg-black/60 border border-white/10 rounded-xl transition-all duration-300 group"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-cyan-400/10 rounded-lg flex items-center justify-center border border-cyan-400/30">
+                    <span className="material-symbols-outlined text-cyan-400 text-2xl">description</span>
+                  </div>
+                  <div className="text-left">
+                    <h3 className="text-lg font-bold text-white tracking-wide">Test Task Guide</h3>
+                    <p className="text-sm text-slate-400 mt-1">Driving Monitoring System Test Procedures</p>
+                  </div>
+                </div>
+                <motion.span
+                    animate={{ rotate: isGuideOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="material-symbols-outlined text-slate-400 text-3xl"
+                >
+                  expand_more
+                </motion.span>
+              </button>
+
+              <AnimatePresence>
+                {isGuideOpen && (
+                    <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                    >
+                      <div className="bg-black/40 p-10 rounded-xl border border-white/5 mt-6"
+                           style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.4)' }}
+                      >
+                        {/* Welcome Section */}
+                        <div className="mb-10">
+                          <h3 className="text-3xl font-display font-bold text-white mb-8 tracking-tight">
+                            SEADS Driving Monitoring System Test
+                          </h3>
+                          <div className="space-y-6">
+                            <div className="bg-gradient-to-br from-cyan-400/5 to-purple-500/5 border border-white/10 rounded-xl p-6">
+                              <h4 className="text-lg font-bold text-cyan-400 mb-3 tracking-wide flex items-center gap-2">
+                                <span className="material-symbols-outlined">waving_hand</span>
+                                Welcome
+                              </h4>
+                              <p className="text-base leading-relaxed text-slate-300 font-light">
+                                Hello! Welcome to SEADS (driving monitoring system) user test. This is a simulated driving scenario test. Please don't be nervous - there are no right or wrong answers. We simply want to understand your genuine user experience.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Test Procedure */}
+                        <div className="bg-black/30 p-8 rounded-xl border border-white/5 mb-8">
+                          <h3 className="text-xl font-bold text-cyan-400 mb-6 tracking-wider uppercase flex items-center gap-3">
+                            <span className="material-symbols-outlined">schedule</span>
+                            Test Procedure
+                          </h3>
+                          <div className="space-y-6">
+                            <div className="flex gap-4">
+                              <div className="flex-shrink-0 w-12 h-12 bg-cyan-400/10 border border-cyan-400/30 rounded-lg flex items-center justify-center">
+                                <span className="text-cyan-400 font-bold text-lg">1</span>
+                              </div>
+                              <div>
+                                <h4 className="font-bold text-white mb-2">Start the Driving Monitoring System</h4>
+                                <p className="text-slate-400">Please start the driving monitoring system and view the driving information displayed on the dashboard.</p>
+                              </div>
+                            </div>
+
+                            <div className="flex gap-4">
+                              <div className="flex-shrink-0 w-12 h-12 bg-purple-400/10 border border-purple-400/30 rounded-lg flex items-center justify-center">
+                                <span className="text-purple-400 font-bold text-lg">2</span>
+                              </div>
+                              <div>
+                                <h4 className="font-bold text-white mb-2">Respond to the Fatigue Alert</h4>
+                                <p className="text-slate-400">When the system detects that you are in a fatigued state and an AI recommendation pops up, please read the recommendation content and respond as you see fit.</p>
+                              </div>
+                            </div>
+
+                            <div className="flex gap-4">
+                              <div className="flex-shrink-0 w-12 h-12 bg-green-400/10 border border-green-400/30 rounded-lg flex items-center justify-center">
+                                <span className="text-green-400 font-bold text-lg">3</span>
+                              </div>
+                              <div>
+                                <h4 className="font-bold text-white mb-2">End the Drive and Review the Trip Report</h4>
+                                <p className="text-slate-400">Please end the current driving session and review the trip summary report generated by the system.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Core Questions */}
+                        <div className="bg-gradient-to-br from-cyan-400/5 to-purple-500/5 border border-white/10 rounded-xl p-8 mb-8">
+                          <h3 className="text-xl font-bold text-cyan-400 mb-6 flex items-center gap-3">
+                            <span className="material-symbols-outlined">help</span>
+                            Core Questions
+                          </h3>
+                          <ul className="space-y-4 text-slate-300">
+                            <li className="flex items-start gap-3">
+                              <span className="text-cyan-400 mt-1 text-xl">•</span>
+                              <span>Did you encounter anything that was <strong className="text-white">difficult to understand or operate</strong>?</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <span className="text-cyan-400 mt-1 text-xl">•</span>
+                              <span>In what situations would you <strong className="text-white">want to use</strong> this system?</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <span className="text-cyan-400 mt-1 text-xl">•</span>
+                              <span>Are there any <strong className="text-white">features you expected but the system didn't have</strong>?</span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        {/* Closing */}
+                        <div className="text-center pt-6 border-t border-white/10">
+                          <p className="text-slate-400 italic text-lg">
+                            Thank you very much for your valuable feedback! Your input will help us improve the system design.
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
 
             {/* Task Selection Buttons */}
             <div className="mb-12">

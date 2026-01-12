@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const containerVariants = {
@@ -84,41 +85,42 @@ const Hero = () => {
           </motion.p>
 
           <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row justify-center gap-6"
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row justify-center gap-6"
           >
             <motion.a
-              href="#solutions"
-              whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(16, 185, 129, 0.4)' }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 bg-signal-green text-midnight font-bold rounded-sm hover:brightness-110 transition-all uppercase tracking-widest shadow-lg shadow-signal-green/20"
+                href="#solutions"
+                whileHover={{scale: 1.05, boxShadow: '0 0 30px rgba(16, 185, 129, 0.4)'}}
+                whileTap={{scale: 0.95}}
+                className="px-10 py-4 bg-signal-green text-midnight font-bold rounded-sm hover:brightness-110 transition-all uppercase tracking-widest shadow-lg shadow-signal-green/20"
             >
               Explore Solutions
             </motion.a>
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.05, backgroundColor: 'rgba(45, 45, 45, 0.3)' }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 bg-transparent text-high-contrast font-bold rounded-sm border border-road-grey hover:bg-road-grey/30 transition-all uppercase tracking-widest"
-            >
-              View Prototypes
-            </motion.a>
+            <Link to="/prototype">
+              <motion.div
+                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(45, 45, 45, 0.3)' }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-10 py-4 bg-transparent text-high-contrast font-bold rounded-sm border border-road-grey hover:bg-road-grey/30 transition-all uppercase tracking-widest"
+              >
+                View Prototypes
+              </motion.div>
+            </Link>
           </motion.div>
         </div>
       </motion.div>
 
       {/* Animated background glow */}
       <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.05, 0.08, 0.05],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-        className="absolute inset-0 -z-0 pointer-events-none"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.05, 0.08, 0.05],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute inset-0 -z-0 pointer-events-none"
       >
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-signal-green rounded-full blur-[160px]"></div>
       </motion.div>

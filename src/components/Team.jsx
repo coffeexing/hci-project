@@ -2,6 +2,11 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
+import joyce from '../assets/team/joyce.png';
+import lai from '../assets/team/lai.jpeg';
+import xing from '../assets/team/xing.png';
+import kor from '../assets/team/kor.jpg';
+
 const Team = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
@@ -10,17 +15,21 @@ const Team = () => {
     {
       name: 'Joyce Puyang Maurice Utap ',
       methodology: 'User 1 Testing',
+      image: joyce,
     },
     {
       name: 'Lai Shi Ni',
       methodology: 'User 2 Testing',
+      image: lai,
     },
     {
       name: 'Xing Zhong Yang',
       methodology: 'User 3 Testing',
+      image: xing,
     },
     {
       name: 'Kor Yee Heng',
+      image: kor,
     },
   ];
 
@@ -70,38 +79,42 @@ const Team = () => {
           className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {teamMembers.map((member, index) => (
-            <motion.div
-              key={member.name}
-              variants={itemVariants}
-              whileHover={{
-                scale: 1.05,
-                y: -10,
-                transition: { duration: 0.3 },
-              }}
-              className="glass-card p-8 rounded-sm text-center hover:bg-road-grey/20 transition-all cursor-pointer"
-            >
               <motion.div
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                transition={{ duration: 0.3 }}
-                className="w-20 h-20 bg-road-grey rounded-full mx-auto mb-6 flex items-center justify-center border border-white/5"
+                  key={member.name}
+                  variants={itemVariants}
+                  whileHover={{
+                    scale: 1.05,
+                    y: -10,
+                    transition: {duration: 0.3},
+                  }}
+                  className="glass-card p-8 rounded-sm text-center hover:bg-road-grey/20 transition-all cursor-pointer"
               >
-                <span className="material-symbols-outlined text-4xl text-subtle">person</span>
-              </motion.div>
-
-              <h4 className="font-bold text-high-contrast text-lg mb-6">{member.name}</h4>
-
-              {member.methodology && (
                 <motion.div
-                  whileHover={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
-                  className="bg-black/50 border border-road-grey rounded-sm py-4 px-4"
+                    whileHover={{scale: 1.1, rotate: 5}}
+                    transition={{duration: 0.3}}
+                    className="w-20 h-20 bg-road-grey rounded-full mx-auto mb-6 overflow-hidden border border-white/5"
                 >
+                  <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                  />
+                </motion.div>
+
+                <h4 className="font-bold text-high-contrast text-lg mb-6">{member.name}</h4>
+
+                {member.methodology && (
+                    <motion.div
+                        whileHover={{backgroundColor: 'rgba(0, 0, 0, 0.7)'}}
+                        className="bg-black/50 border border-road-grey rounded-sm py-4 px-4"
+                    >
                   <span className="text-[9px] uppercase tracking-[0.3em] text-subtle block mb-1">
                     Methodology
                   </span>
-                  <p className="font-bold text-sm text-high-contrast">{member.methodology}</p>
-                </motion.div>
-              )}
-            </motion.div>
+                      <p className="font-bold text-sm text-high-contrast">{member.methodology}</p>
+                    </motion.div>
+                )}
+              </motion.div>
           ))}
         </motion.div>
       </motion.div>
