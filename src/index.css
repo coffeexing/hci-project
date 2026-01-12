@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.road-divider {
+  height: 1px;
+  background-image: linear-gradient(to right, #444 50%, transparent 50%);
+  background-size: 40px 1px;
+  border: none;
+  margin: 0;
+}
+
+.glass-card {
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.text-high-contrast {
+  color: #FFFFFF;
+}
+
+.text-subtle {
+  color: #A1A1AA;
+}
+
+h2.impact-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  h2.impact-heading {
+    font-size: 3.75rem;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2D2D2D;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #10B981;
+}
