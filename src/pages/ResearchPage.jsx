@@ -157,7 +157,7 @@ const ResearchPage = () => {
                     <span className="material-symbols-outlined text-cyan-400 text-2xl">description</span>
                   </div>
                   <div className="text-left">
-                    <h3 className="text-lg font-bold text-white tracking-wide">Test Task Guide</h3>
+                    <h3 className="text-lg font-bold text-white tracking-wide">Briefing Notes - Test Task Guide</h3>
                     <p className="text-sm text-slate-400 mt-1">Driving Monitoring System Test Procedures</p>
                   </div>
                 </div>
@@ -240,7 +240,7 @@ const ResearchPage = () => {
                         </div>
 
                         {/* Core Questions */}
-                        <div className="bg-gradient-to-br from-cyan-400/5 to-purple-500/5 border border-white/10 rounded-xl p-8 mb-8">
+                        <div className="bg-gradient-to-br from-cyan-400/5 to-purple-500/5 border border-white/10 rounded-xl p-8 mb-6">
                           <h3 className="text-xl font-bold text-cyan-400 mb-6 flex items-center gap-3">
                             <span className="material-symbols-outlined">help</span>
                             Core Questions
@@ -262,10 +262,18 @@ const ResearchPage = () => {
                         </div>
 
                         {/* Closing */}
-                        <div className="text-center pt-6 border-t border-white/10">
+                        <div className="bg-black/30 border border-white/10 rounded-xl p-6 mb-6">
                           <p className="text-slate-400 italic text-lg">
                             Thank you very much for your valuable feedback! Your input will help us improve the system design.
                           </p>
+                        </div>
+
+                        {/* Authors */}
+                        <div className="pt-6 border-t border-white/10">
+                          <div className="flex items-center gap-3">
+                            <span className="material-symbols-outlined text-slate-500 text-lg">person</span>
+                            <p className="text-sm text-slate-500 italic">Prepared by Kor Yee Heng and Xing Zhongyang</p>
+                          </div>
                         </div>
                       </div>
                     </motion.div>
